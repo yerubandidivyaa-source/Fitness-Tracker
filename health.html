@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Tracker - Health</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .health-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .health-form {
+            max-width: 550px;
+            margin: 0 auto 35px;
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .health-form h2 {
+            text-align: center;
+            color: #6c5ce7;
+            margin-bottom: 25px;
+        }
+
+        .health-form button {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        .health-result {
+            max-width: 550px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            padding: 35px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 184, 148, 0.25);
+        }
+
+        .health-result h2 {
+            margin-bottom: 12px;
+        }
+
+        .bmi-number {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .health-note {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .health-page {
+                padding: 25px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .health-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>💪 Fitness Tracker</h2>
+
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="steps.html">Steps</a>
+            <a href="diet.html">Diet</a>
+            <a href="goals.html">Goals</a>
+            <a href="health.html">Health</a>
+            <a href="progress.html">Progress</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+
+    <main class="health-page">
+
+        <div class="page-header">
+            <h1>❤️ Health Information</h1>
+
+            <p>
+                Keep your basic health information saved in your tracker.
+            </p>
+        </div>
+
+
+        <div class="health-form">
+
+            <h2>Enter Your Details</h2>
+
+            <label for="age">Age</label>
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter your age"
+                min="1"
+            >
+
+
+            <label for="height">Height (cm)</label>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="Example: 165"
+                min="1"
+            >
+
+
+            <label for="weight">Weight (kg)</label>
+
+            <input
+                type="number"
+                id="weight"
+                placeholder="Example: 55"
+                min="1"
+                step="0.1"
+            >
+
+
+            <button onclick="saveHealth()">
+                💾 Save Health Data
+            </button>
+
+        </div>
+
+
+        <div class="health-result">
+
+            <h2>📊 Calculated BMI</h2>
+
+            <div class="bmi-number" id="bmi">
+                0
+            </div>
+
+            <p class="health-note">
+                BMI is displayed as a calculated number based on the
+                height and weight entered above.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Fitness Tracker</p>
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/health.js"></script>
+
+</body>
+</html>

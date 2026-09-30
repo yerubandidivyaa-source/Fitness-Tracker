@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - Diet</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .diet-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .diet-form {
+            max-width: 550px;
+            margin: 0 auto 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .diet-form h2 {
+            text-align: center;
+            color: #6c5ce7;
+            margin-bottom: 25px;
+        }
+
+        .diet-form button {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        .diet-list-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #dietList {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .diet-item {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #00b894;
+            transition: 0.3s;
+        }
+
+        .diet-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .diet-item h3 {
+            color: #00a884;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .diet-item p {
+            margin: 7px 0;
+            color: #666;
+        }
+
+        .diet-item button {
+            margin-top: 12px;
+            background: linear-gradient(135deg, #ff7675, #d63031);
+        }
+
+        .empty-message {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            color: #777;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (max-width: 600px) {
+            .diet-page {
+                padding: 25px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .diet-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>💪 Fitness Tracker</h2>
+
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="steps.html">Steps</a>
+            <a href="diet.html">Diet</a>
+            <a href="goals.html">Goals</a>
+            <a href="health.html">Health</a>
+            <a href="progress.html">Progress</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <main class="diet-page">
+
+        <div class="page-header">
+            <h1>🍎 Diet Tracker</h1>
+            <p>Keep track of the food you eat.</p>
+        </div>
+
+        <div class="diet-form">
+
+            <h2>Add Food</h2>
+
+            <label for="foodName">Food Name</label>
+
+            <input
+                type="text"
+                id="foodName"
+                placeholder="Example: Rice"
+            >
+
+            <label for="foodCalories">Calories</label>
+
+            <input
+                type="number"
+                id="foodCalories"
+                placeholder="Example: 250"
+                min="1"
+            >
+
+            <button onclick="addFood()">
+                🍎 Add Food
+            </button>
+
+        </div>
+
+        <h2 class="diet-list-title">
+            📋 Food History
+        </h2>
+
+        <div id="dietList">
+
+            <div class="empty-message">
+                No food records available.
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Fitness Tracker</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/diet.js"></script>
+
+</body>
+</html>

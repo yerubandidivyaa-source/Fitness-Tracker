@@ -1,0 +1,477 @@
+/* =========================================
+   FITNESS TRACKER - MODERN STYLE
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8f9ff, #e8f7ff);
+    color: #202438;
+    min-height: 100vh;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.navbar {
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+    color: white;
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 5px 20px rgba(72, 52, 212, 0.25);
+}
+
+.navbar h2 {
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+
+.navbar div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffeaa7;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+/* =========================================
+   WELCOME
+   ========================================= */
+
+.welcome {
+    background: linear-gradient(135deg, #6c5ce7, #8e7cff);
+    color: white;
+
+    padding: 35px;
+    border-radius: 22px;
+
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 12px 30px rgba(108, 92, 231, 0.25);
+}
+
+.welcome h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 17px;
+}
+
+.user-name {
+    color: #ffeaa7;
+    font-weight: 700;
+}
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    min-height: 165px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.13);
+}
+
+.card h3 {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: 800;
+    color: #6c5ce7;
+}
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.form-container {
+    background: white;
+
+    width: 100%;
+    max-width: 480px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #6c5ce7;
+    margin-bottom: 8px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 18px;
+
+    border: 2px solid #e6e8f0;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    background: #fafbff;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #6c5ce7;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin: 5px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 15px rgba(108, 92, 231, 0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(108, 92, 231, 0.35);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff7675, #d63031);
+}
+
+/* =========================================
+   WORKOUT / DIET / GOAL ITEMS
+   ========================================= */
+
+.workout-item,
+.diet-item,
+.goal-item {
+    background: white;
+
+    padding: 22px;
+
+    margin: 15px 0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
+
+    border-left: 5px solid #6c5ce7;
+
+    transition: 0.3s;
+}
+
+.workout-item:hover,
+.diet-item:hover,
+.goal-item:hover {
+    transform: translateX(5px);
+}
+
+.workout-item h3,
+.diet-item h3,
+.goal-item h3 {
+    color: #6c5ce7;
+    margin-bottom: 8px;
+}
+
+.workout-item p,
+.diet-item p,
+.goal-item p {
+    margin: 7px 0;
+    color: #666;
+}
+
+/* =========================================
+   BMI
+   ========================================= */
+
+.bmi-box {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 184, 148, 0.25);
+}
+
+.bmi-box h2 {
+    margin-bottom: 12px;
+}
+
+#bmi {
+    font-size: 38px;
+
+    font-weight: 800;
+
+    color: white;
+}
+
+/* =========================================
+   PROGRESS BAR
+   ========================================= */
+
+.progress-container {
+    width: 100%;
+
+    height: 25px;
+
+    background: #e9ecf5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 20px 0;
+}
+
+#progressBar {
+    height: 100%;
+
+    width: 0%;
+
+    background: linear-gradient(
+        90deg,
+        #6c5ce7,
+        #00cec9
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.7s ease;
+}
+
+#progressText {
+    text-align: center;
+
+    font-weight: 700;
+
+    color: #6c5ce7;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 45px;
+
+    color: #777;
+}
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    color: #6c5ce7;
+}
+
+.form-container a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 950px) {
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding: 25px 15px;
+    }
+
+    .welcome h1 {
+        font-size: 25px;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+    }
+
+    .navbar {
+        padding: 18px 15px;
+    }
+
+    .navbar div {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

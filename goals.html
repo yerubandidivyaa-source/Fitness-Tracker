@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Tracker - Goals</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .goals-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .goal-form {
+            max-width: 550px;
+            margin: 0 auto 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .goal-form h2 {
+            text-align: center;
+            color: #6c5ce7;
+            margin-bottom: 25px;
+        }
+
+        .goal-form button {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        .goals-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #goalList {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .goal-item {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #6c5ce7;
+            transition: 0.3s;
+        }
+
+        .goal-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .goal-item h3 {
+            color: #6c5ce7;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .goal-item p {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        .goal-item button {
+            margin-top: 12px;
+        }
+
+        .goal-item button:last-child {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+        }
+
+        .empty-message {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            color: #777;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (max-width: 600px) {
+            .goals-page {
+                padding: 25px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .goal-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>💪 Fitness Tracker</h2>
+
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="steps.html">Steps</a>
+            <a href="diet.html">Diet</a>
+            <a href="goals.html">Goals</a>
+            <a href="health.html">Health</a>
+            <a href="progress.html">Progress</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+
+    <main class="goals-page">
+
+        <div class="page-header">
+            <h1>🎯 My Goals</h1>
+            <p>Set goals and track your progress.</p>
+        </div>
+
+
+        <div class="goal-form">
+
+            <h2>Add New Goal</h2>
+
+            <label for="goalName">Goal Name</label>
+
+            <input
+                type="text"
+                id="goalName"
+                placeholder="Example: Daily Walking"
+            >
+
+            <label for="goalTarget">Target</label>
+
+            <input
+                type="text"
+                id="goalTarget"
+                placeholder="Example: 5000 steps per day"
+            >
+
+            <button onclick="addGoal()">
+                🎯 Add Goal
+            </button>
+
+        </div>
+
+
+        <h2 class="goals-title">
+            📋 My Goals
+        </h2>
+
+
+        <div id="goalList">
+
+            <div class="empty-message">
+                No goals added yet.
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Fitness Tracker</p>
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/goals.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Tracker - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .dashboard {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .dashboard-cards {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 0 auto;
+        }
+
+        .dashboard-card {
+            min-height: 190px;
+            background: white;
+            border-radius: 22px;
+            padding: 30px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14);
+        }
+
+        .dashboard-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .dashboard-card h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .dashboard-value {
+            font-size: 30px;
+            font-weight: bold;
+            color: #6c5ce7;
+        }
+
+        .update-link {
+            margin-top: 12px;
+            text-decoration: none;
+            color: #0984e3;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .update-link:hover {
+            text-decoration: underline;
+        }
+
+        .quick-actions {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .quick-actions h2 {
+            margin-bottom: 20px;
+        }
+
+        .quick-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .quick-buttons a {
+            text-decoration: none;
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #6c5ce7,
+                #4834d4
+            );
+
+            padding: 13px 22px;
+            border-radius: 10px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .quick-buttons a:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 900px) {
+
+            .dashboard-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .dashboard {
+                padding: 25px 15px;
+            }
+
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header h1 {
+                font-size: 28px;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <h2>💪 Fitness Tracker</h2>
+
+        <div>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="workouts.html">Workouts</a>
+
+            <a href="steps.html">Steps</a>
+
+            <a href="diet.html">Diet</a>
+
+            <a href="goals.html">Goals</a>
+
+            <a href="health.html">Health</a>
+
+            <a href="progress.html">Progress</a>
+
+            <a href="water.html">Water</a>
+
+            <a href="#" onclick="logout()">Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+
+    <main class="dashboard">
+
+
+        <!-- Welcome -->
+
+        <div class="dashboard-header">
+
+            <h1>
+                Welcome,
+                <span class="user-name"></span>! 👋
+            </h1>
+
+            <p>
+                Track your fitness journey and stay active.
+            </p>
+
+        </div>
+
+
+        <!-- Dashboard Cards -->
+
+        <div class="dashboard-cards">
+
+
+            <!-- Steps -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    👟
+                </div>
+
+                <h3>Steps</h3>
+
+                <div
+                    class="dashboard-value"
+                    id="dashboardSteps">
+                    0
+                </div>
+
+                <a
+                    href="steps.html"
+                    class="update-link">
+                    Update Steps
+                </a>
+
+            </div>
+
+
+            <!-- Calories -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    🔥
+                </div>
+
+                <h3>Calories Burned</h3>
+
+                <div
+                    class="dashboard-value"
+                    id="dashboardCalories">
+                    0 kcal
+                </div>
+
+            </div>
+
+
+            <!-- Workouts -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    🏋️
+                </div>
+
+                <h3>Workouts</h3>
+
+                <div
+                    class="dashboard-value"
+                    id="dashboardWorkouts">
+                    0
+                </div>
+
+                <a
+                    href="workouts.html"
+                    class="update-link">
+                    Add Workout
+                </a>
+
+            </div>
+
+
+            <!-- Water -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    💧
+                </div>
+
+                <h3>Water</h3>
+
+                <div
+                    class="dashboard-value"
+                    id="dashboardWater">
+                    0 L
+                </div>
+
+                <a
+                    href="water.html"
+                    class="update-link">
+                    Update Water
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Quick Actions -->
+
+        <section class="quick-actions">
+
+            <h2>
+                Quick Actions ⚡
+            </h2>
+
+            <div class="quick-buttons">
+
+                <a href="workouts.html">
+                    🏋️ Add Workout
+                </a>
+
+                <a href="steps.html">
+                    👟 Update Steps
+                </a>
+
+                <a href="diet.html">
+                    🍎 Add Food
+                </a>
+
+                <a href="goals.html">
+                    🎯 Set Goal
+                </a>
+
+                <a href="health.html">
+                    ❤️ Health
+                </a>
+
+                <a href="water.html">
+                    💧 Water
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Fitness Tracker
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+</html>
